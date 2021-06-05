@@ -77,7 +77,15 @@ pipeline {
                    ls -ltr
                    cat frontend-cont.txt | grep IPAddress
                    cat backend-cont.txt | grep IPAddress
-                   echo "__________ Expected output ________"
+                   cat simple.sh
+                   cat pack.txt | grep vim
+                   sleep 3
+                   echo "______ Stopping/Removing docker containers with respective images _______"
+                   docker stop c7c 3b5
+                   docker rm c7c 3b5
+                   docker rmi 2f9 436
+                   
+                   echo "__________ ENDS THE SCRIPT ________"
                    '''
             }
         }
