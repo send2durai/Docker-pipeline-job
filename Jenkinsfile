@@ -74,6 +74,10 @@ pipeline {
                    pwd
                    cd /home/centos
                    pwd
+                   ls -ltr
+                   cat frontend-cont.txt | grep IPAddress
+                   cat backend-cont.txt | grep IPAddress
+                   echo "__________ Expected output ________"
                    '''
             }
         }
