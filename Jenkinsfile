@@ -55,7 +55,7 @@ pipeline {
                    sudo docker pull thecloudcareers/backend:v2
                    sudo docker images
                    sleep 5
-                   sudo docker inspect eb2  > /home/centos/frontend-container
+                   sudo docker inspect e62  > /home/centos/frontend-container
                    sudo docker inspect ad5 > /home/centos/backend-container  
                    '''
             }
