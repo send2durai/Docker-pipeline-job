@@ -58,11 +58,18 @@ pipeline {
                    # docker run -d -p 81:3306 2f9
                    docker ps
                    sleep 3
+                   docker stop c7c
+                   docker stop 3b5
+                   sleep 4
                    docker start c7c
                    docker start 3b5
+                   sleep 2
+                   docker ps
                    docker inspect c7c > /home/centos/frontend-cont.txt
-                   docker inspect 3b5 > /home/centos/.txt
+                   docker inspect 3b5 > /home/centos/backend-cont.txt
                    sleep 3
+                   docker inspect c7c | grep IPAddress
+                   docker inspect 3b5 | grep IPAddress
                    cat /home/centos/frontend.txt | grep IPAddress
                    cat /home/centos/backend.txt | grep IPAddress
                    '''
