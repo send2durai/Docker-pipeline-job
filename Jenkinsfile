@@ -25,7 +25,6 @@ pipeline {
                     git version
                     sudo systemctl status docker
                     sudo docker version
-                    echo "Pulling docker images from docker hub"
                    '''
             }
         }
@@ -51,12 +50,13 @@ pipeline {
             steps {
                 sh 'echo "First docker images pulling from Docker hub"'
                 sh '''
-                   sudo docker pull thecloudcareers/frontend:v2
-                   sudo docker pull thecloudcareers/backend:v2
-                   sudo docker images
+                   docker pull thecloudcareers/frontend:v2
+                   docker pull thecloudcareers/backend:v2
+                   docker images
                    sleep 5
-                   sudo docker inspect e62  > /home/centos/frontend-container
-                   sudo docker inspect ad5 > /home/centos/backend-container  
+                   docker run -d -p 80:80 436
+                   docker run -d -p 81:3306 2f9
+                   docker ps
                    '''
             }
         }
