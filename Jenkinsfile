@@ -74,8 +74,6 @@ pipeline {
                    pwd
                    cd /home/centos
                    pwd
-                   sudo cat /home/centos/frontend.txt | grep IPAddress
-                   sudo cat /home/centos/backend.txt | grep IPAddress
                    '''
             }
         }
