@@ -7,10 +7,14 @@ pipeline {
                 
             }
         }
-    stage {
-        stage ("executing linux commands") {
+    stages {
+        stage (" executing linux commands ") {
             steps {
-                sh 'sudo yum install bind-utils -y'; sh 'nslookup google.com'
+                sh 'echo "hello world"'
+                sh '''
+                    echo "Multiline shell steps works too"
+                    ls -lah
+                   '''
             }
         }
     }
