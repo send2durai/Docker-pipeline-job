@@ -1,14 +1,14 @@
 pipeline {
     agent any
     stages {
-        stage ('checkout from GIT') {
+        stage ('CHECKOUT GIT REPO') {
             steps {
                 git branch: 'main', credentialsId: '313ea927-c52a-46bd-9bd2-c038ac77803c', url: 'https://github.com/send2durai/aws-ec2-instance-bootstrap.git'
             }
         }
-        stage ('Executing Linux commands') {
+        stage ('EXECUTING LINUX COMMANDS') {
             steps {
-                sh 'echo "hello world"'
+                sh 'echo "Hello World"'
                 sh '''
                     echo "Multiline shell steps works too"
                     ls -lah
@@ -22,27 +22,28 @@ pipeline {
                     sudo cat /var/log/jenkins/jenkins.log
                     sleep 5
                     sudo cat /etc/sysconfig/jenkins
-                    ip a s
-                    terraform version
+                    git version
+                    sudo systemctl status docker
+                    sudo docker version
                    '''
             }
         }
-        stage ('Linux commands are executed') {
+        stage ('LINUX COMMANDS ARE EXECUTED') {
             steps {
                 sh 'echo "Your job is successfully completed"'
                 sh 'echo  "Happy learning"'
             }
         }
-        stage ('Corona is killing entire nation'){
+        stage ('CORONA IS KILLING ENTIRE WORLD'){
             steps {
                 sh 'echo "Corona is a dangerous virus"'
                 sh 'echo "Please try to get vaccinated to your body"'
             }
         }
-        stage ('Time to lear'){
+        stage ('TIME TO LEARN DEVOPS TOOLS'){
             steps {
                 sh 'echo "Learn as much as possible to learn"'
-                sh 'echo "The world is moving very fast"'
+                sh 'echo "The world is moving very FAST"'
             }
         }
     }
