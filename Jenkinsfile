@@ -25,6 +25,7 @@ pipeline {
                     git version
                     sudo systemctl status docker
                     sudo docker version
+                    echo "Pulling docker images from docker hub"
                    '''
             }
         }
@@ -44,6 +45,16 @@ pipeline {
             steps {
                 sh 'echo "Learn as much as possible to learn"'
                 sh 'echo "The world is moving very FAST"'
+            }
+        }
+        stage ('TESTING DOCKER IMAGES WITH CONTAINERS'){
+            steps {
+                sh 'echo "First docker images pulling from Docker hub"'
+                sh '''
+                   sudo docker pull thecloudcareers/frontend:v2
+                   sudo docker pull thecloudcareers/backend:v2
+                   sudo docker images
+                   '''
             }
         }
     }
