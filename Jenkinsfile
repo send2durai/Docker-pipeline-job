@@ -70,8 +70,12 @@ pipeline {
                    sleep 3
                    docker inspect c7c | grep IPAddress
                    docker inspect 3b5 | grep IPAddress
-                   cat /home/centos/frontend.txt | grep IPAddress
-                   cat /home/centos/backend.txt | grep IPAddress
+                   sleep 1
+                   pwd
+                   cd /home/centos
+                   pwd
+                   sudo cat /home/centos/frontend.txt | grep IPAddress
+                   sudo cat /home/centos/backend.txt | grep IPAddress
                    '''
             }
         }
