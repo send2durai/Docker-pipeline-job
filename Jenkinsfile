@@ -6,7 +6,7 @@ pipeline {
                 git branch: 'main', credentialsId: '313ea927-c52a-46bd-9bd2-c038ac77803c', url: 'https://github.com/send2durai/aws-ec2-instance-bootstrap.git'
             }
         }
-        stage ('executing linux commands') {
+        stage ('Executing Linux commands') {
             steps {
                 sh 'echo "hello world"'
                 sh '''
@@ -22,20 +22,27 @@ pipeline {
                     sudo cat /var/log/jenkins/jenkins.log
                     sleep 5
                     sudo cat /etc/sysconfig/jenkins
+                    ip a s
+                    terraform version
                    '''
             }
         }
         stage ('Linux commands are executed') {
             steps {
                 sh 'echo "Your job is successfully completed"'
-                sh 'echo  "happy learning"'
-                sh 'echo  "Please check respective paths mentioned in Jenkinsfile"'
+                sh 'echo  "Happy learning"'
             }
         }
         stage ('Corona is killing entire nation'){
             steps {
                 sh 'echo "Corona is a dangerous virus"'
                 sh 'echo "Please try to get vaccinated to your body"'
+            }
+        }
+        stage ('Time to lear'){
+            steps {
+                sh 'echo "Learn as much as possible to learn"'
+                sh 'echo "The world is moving very fast"'
             }
         }
     }
