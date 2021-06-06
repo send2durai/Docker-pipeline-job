@@ -47,17 +47,18 @@ pipeline {
                 sh 'echo "First docker images pulling from Docker hub"'
                 sh '''
 		   docker info
-                   docker pull durai5050/backend:v1
-                   docker pull durai5050/frontend:v1
+                   #docker pull durai5050/backend:v1
+                   #docker pull durai5050/frontend:v1
                    docker images
+		   sleep 5
 		   docker images >> /home/centos/doc-imag.txt
 		   pwd
 		   cd /home/centos
 		   pwd
 		   cat /home/centos/doc-imag.txt
                    docker ps
-		   docker run -d --name web-srvr -p 80:80 436
-		   docker run -d --name mysqldb -p 81:80 2f9
+		   #docker run -d --name web-srvr -p 80:80 436
+		   #docker run -d --name mysqldb -p 81:80 2f9
 	           docker container ls -q
                    docker ps 
 		   sleep 10
@@ -65,31 +66,28 @@ pipeline {
 		   sleep 6
 		   docker container ls -q
 		   echo " How to inspect the docker containers using their unique ID"
-                   #docker inspect b46 > /home/centos/frontend-cont.txt
-                   #docker inspect 58e > /home/centos/backend-cont.txt
+                   #docker inspect 278 > /home/centos/frontend-cont.txt
+                   #docker inspect e65 > /home/centos/backend-cont.txt
                    #sleep 3
-                   #docker inspect b46 | grep IPAddress
-                   #docker inspect 58e | grep IPAddress
+                   docker inspect 278 | grep IPAddress
+                   docker inspect e65 | grep IPAddress
                    sleep 1
                    pwd
                    cd /home/centos
                    pwd
                    ls -ltr
-                   #cat frontend-cont.txt | grep IPAddress
-                   #cat backend-cont.txt | grep IPAddress
+                   cat frontend-cont.txt | grep IPAddress
+                   cat backend-cont.txt | grep IPAddress
                    cat jenkins-conf.txt
 		   sleep 2
-                   cat etc-under-folders.txt
-		   cat doc-imag.txt
+                   echo "________ docker images and containers removal _________"
                    sleep 3
-                   #echo "________ docker images and containers removal _________"
-                   #sleep 3
-		   #docker stop b46 58e
-		   #docker rm b46 58e
-		   #docker rmi 2f9 436
-		   #sleep 2
-		   #docker ps
-		   #docker images
+		   docker stop 278 e65
+		   docker rm 278 e65
+		   docker rmi 278 e65
+		   sleep 2
+		   docker ps
+		   docker images
                    echo "__________ ENDS THE SCRIPT ________"
                    '''
             }
