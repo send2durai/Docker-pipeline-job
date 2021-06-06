@@ -50,41 +50,10 @@ pipeline {
             steps {
                 sh 'echo "First docker images pulling from Docker hub"'
                 sh '''
-                   # docker pull thecloudcareers/frontend:v2
-                   # docker pull thecloudcareers/backend:v2
+                   docker pull durai5050/backend
+                   docker pull durai5050/frontend
                    docker images
                    sleep 5
-                   # docker run -d -p 80:80 436
-                   # docker run -d -p 81:3306 2f9
-                   docker ps
-                   sleep 3
-                   docker stop c7c
-                   docker stop 3b5
-                   sleep 4
-                   docker start c7c
-                   docker start 3b5
-                   sleep 2
-                   docker ps
-                   docker inspect c7c > /home/centos/frontend-cont.txt
-                   docker inspect 3b5 > /home/centos/backend-cont.txt
-                   sleep 3
-                   docker inspect c7c | grep IPAddress
-                   docker inspect 3b5 | grep IPAddress
-                   sleep 1
-                   pwd
-                   cd /home/centos
-                   pwd
-                   ls -ltr
-                   cat frontend-cont.txt | grep IPAddress
-                   cat backend-cont.txt | grep IPAddress
-                   cat simple.sh
-                   cat pack.txt | grep vim
-                   sleep 3
-                   echo "______ Stopping/Removing docker containers with respective images _______"
-                   docker stop c7c 3b5
-                   docker rm c7c 3b5
-                   docker rmi 2f9 436
-                   
                    echo "__________ ENDS THE SCRIPT ________"
                    '''
             }
