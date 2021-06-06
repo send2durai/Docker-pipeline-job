@@ -53,7 +53,7 @@ pipeline {
                    docker pull durai5050/backend
                    docker pull durai5050/frontend
                    docker images
-                   sleep 5
+                   sleep 3
                    echo "__________ ENDS THE SCRIPT ________"
                    '''
             }
