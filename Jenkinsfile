@@ -56,10 +56,10 @@ pipeline {
 		   pwd
 		   cat /home/centos/doc-imag.txt
                    docker ps
-		   docker run -d --name frontend -p 80:80 436
-		   docker run -d --name backend -p 81:80 2f9
-		   docker logs -f frontend
-		   docker logs -f backend
+		   docker run -d --name web-srvr -p 80:80 436
+		   docker run -d --name mysqldb -p 81:80 2f9
+		   docker logs -f web-srvr
+		   docker logs -f mysqld 
 	           docker container ls -q
                    docker ps 
 		   sleep 10
