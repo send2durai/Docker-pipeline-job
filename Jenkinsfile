@@ -16,7 +16,6 @@ pipeline {
                     ls -ltr /etc/ >> /home/centos/etc-under-folders.txt
                     sleep 5
                     rm -rf /home/centos/india.html
-                    sudo cp /var/log/jenkins/jenkins.log >> /home/centos/jenkins-log.txt
                     sleep 5
                     sudo cat /etc/sysconfig/jenkins  >> /home/centos/jenkins-conf.txt
                     git version
