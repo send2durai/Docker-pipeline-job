@@ -50,8 +50,8 @@ pipeline {
             steps {
                 sh 'echo "First docker images pulling from Docker hub"'
                 sh '''
-                   docker pull durai5050/backend
-                   docker pull durai5050/frontend
+                   docker pull durai5050/backend:v1
+                   docker pull durai5050/frontend:v1
                    docker images
                    sleep 3
                    echo "__________ ENDS THE SCRIPT ________"
