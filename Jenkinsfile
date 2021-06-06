@@ -59,7 +59,7 @@ pipeline {
                    sleep 2
 	           echo "_________ Containers are starting ___________"
 	           docker start b46 58e
-	           docker ls -q
+	           docker container ls -q
                    docker ps
                    docker inspect b46 > /home/centos/frontend-cont.txt
                    docker inspect 58e > /home/centos/backend-cont.txt
