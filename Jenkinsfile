@@ -75,11 +75,12 @@ pipeline {
                    cd /home/centos
                    pwd
                    ls -ltr
-                   cat frontend-cont.txt | grep IPAddress
-                   cat backend-cont.txt | grep IPAddress
-                   cat simple.sh
+                   #cat frontend-cont.txt | grep IPAddress
+                   #cat backend-cont.txt | grep IPAddress
+                   cat jenkins-conf.txt
 		   sleep 2
-                   cat pack.txt | grep vim         
+                   cat etc-under-folders.txt
+		   cat doc-imag.txt
                    sleep 3
                    #echo "________ docker images and containers removal _________"
                    #sleep 3
