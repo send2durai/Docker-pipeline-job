@@ -83,8 +83,14 @@ pipeline {
                    docker container ls -a
                    docker container ls -q
                    docker ps -a
-                   sleep 4
+                   echo "________ docker images and containers removal _________"
                    sleep 3
+		   docker stop b46 58e
+		   docker rm b46 58e
+		   docker rmi 2f9 436
+		   sleep 2
+		   docker ps
+		   docker images
                    echo "__________ ENDS THE SCRIPT ________"
                    '''
             }
