@@ -66,9 +66,9 @@ pipeline {
 		   sleep 6
 		   docker container ls -q
 		   echo " How to inspect the docker containers using their unique ID"
-                   #docker inspect 278 > /home/centos/frontend-cont.txt
-                   #docker inspect e65 > /home/centos/backend-cont.txt
-                   #sleep 3
+                   docker inspect 278 > /home/centos/frontend-cont.txt
+                   docker inspect e65 > /home/centos/backend-cont.txt
+                   sleep 3
                    docker inspect 278 | grep IPAddress
                    docker inspect e65 | grep IPAddress
                    sleep 1
