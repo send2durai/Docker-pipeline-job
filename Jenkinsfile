@@ -53,6 +53,15 @@ pipeline {
                    docker pull durai5050/backend:v1
                    docker pull durai5050/frontend:v1
                    docker images
+                   docker ps
+                   sleep 3
+                   docker run -d -p 80:80 436
+				   docker run -d -p 81:80 2f9
+                   docker container ls
+                   docker container ls -a
+                   docker container ls -q
+                   docker ps -a
+                   sleep 4
                    sleep 3
                    echo "__________ ENDS THE SCRIPT ________"
                    '''
