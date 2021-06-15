@@ -12,8 +12,6 @@ pipeline {
                     ls -lah
                     lsblk
                     df -hT
-		    sudo su -
-		    whoami
 		    id
                     yum list installed >> /home/ec2-user/pack.txt
                     ls -ltr /etc/ >> /home/ec2-user/etc-under-folders.txt
