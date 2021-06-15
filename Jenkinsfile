@@ -12,12 +12,12 @@ pipeline {
                     ls -lah
                     lsblk
                     df -hT
-                    yum list installed >> /home/ec2-user/pack.txt
-                    ls -ltr /etc/ >> /home/ec2-user/etc-under-folders.txt
+                    sudo yum list installed >> /home/ec2-user/pack.txt
+                    sudo ls -ltr /etc/ >> /home/ec2-user/etc-under-folders.txt
                     sleep 5
-                    rm -rf /home/ec2-user/india.html
+                    sudo rm -rf /home/ec2-user/india.html
                     sleep 5
-                    cat /etc/sysconfig/jenkins  >> /home/ec2-user/jenkins-conf.txt
+                    sudo cat /etc/sysconfig/jenkins  >> /home/ec2-user/jenkins-conf.txt
                     git version
                     systemctl status docker
                     docker version
