@@ -57,15 +57,15 @@ pipeline {
 		   #echo "_______ docker images and containers are provisioned _______"
 		   sleep 5
 		   echo " How to inspect the docker containers using their unique ID ??"
-		   docker start fcc d57
+		   #docker start fcc d57
 		   docker ps -a > /home/ec2-user/cont.txt
-		   awk '{ print$3 }' cont.txt
+		   awk '{ print$1 }' cont.txt
                    docker inspect fcc > /home/ec2-user/frontend-cont.txt
                    docker inspect d57 > /home/ec2-user/backend-cont.txt
                    sleep 3
                    docker inspect fcc | grep IPAddress
                    docker inspect d57 | grep IPAddress
-                   sleep 1
+                   sleep 5
                    pwd
                    cd /home/ec2-user
                    pwd
