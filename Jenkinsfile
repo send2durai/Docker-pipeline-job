@@ -63,14 +63,15 @@ pipeline {
                    docker inspect fcc > /home/ec2-user/frontend-cont.txt
                    docker inspect d57 > /home/ec2-user/backend-cont.txt
                    sleep 3
-                   docker inspect fcc | grep IPAddress
-                   docker inspect d57 | grep IPAddress
-		   curl 172.17.0.3
+                   #docker inspect fcc | grep IPAddress
+                   #docker inspect d57 | grep IPAddress
+		   docker inspect -f '{{.NetworkSettings.IPAddress}}' fcc > /home/ec2-user/CIP
+		   docker inspect -f '{{.NetworkSettings.IPAddress}}' d57 >> /home/ec2-user/CIP
                    sleep 5
                    pwd
                    cd /home/ec2-user
-                   pwd
                    ls -ltr
+		   cat CIP
                    #cat frontend-cont.txt | grep IPAddress
                    #cat backend-cont.txt | grep IPAddress
                    cat jen-conf.txt | grep JENKINS_USER
