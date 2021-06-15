@@ -65,6 +65,7 @@ pipeline {
                    sleep 3
                    docker inspect fcc | grep IPAddress
                    docker inspect d57 | grep IPAddress
+		   curl 
                    sleep 5
                    pwd
                    cd /home/ec2-user
