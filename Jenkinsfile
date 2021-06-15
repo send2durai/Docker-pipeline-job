@@ -12,10 +12,10 @@ pipeline {
                     ls -lah
                     lsblk
                     df -hT
-                    yum list installed >> /home/centos/pack.txt
-                    ls -ltr /etc/ >> /home/centos/etc-under-folders.txt
+                    yum list installed >> /home/ec2-user/pack.txt
+                    ls -ltr /etc/ >> /home/ec2-user/etc-under-folders.txt
                     sleep 5
-                    rm -rf /home/centos/india.html
+                    rm -rf /home/ec2-user/india.html
                     sleep 5
                     sudo cat /etc/sysconfig/jenkins  >> /home/centos/jenkins-conf.txt
                     git version
