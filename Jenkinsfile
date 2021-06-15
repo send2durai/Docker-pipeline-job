@@ -66,7 +66,7 @@ pipeline {
                    #docker inspect fcc | grep IPAddress
                    #docker inspect d57 | grep IPAddress
 		   docker inspect -f '{{.NetworkSettings.IPAddress}}' fcc > /home/ec2-user/CIP
-		   docker inspect -f '{{.NetworkSettings.IPAddress}}' d57 >> /home/ec2-user/CIP
+		   docker inspect -f '{{.NetworkSettings.IPAddress}}' d57 >> /home/ec2-user/CIP1
                    sleep 5
                    pwd
                    cd /home/ec2-user
