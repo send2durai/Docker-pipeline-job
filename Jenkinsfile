@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ('CHECKOUT GIT MASTER REPO') {
             steps {
-                git branch: 'main', credentialsId: '94c3a826-3260-462b-ae03-bda756fa3cea', url: 'https://github.com/send2durai/aws-ec2-instance-bootstrap.git'
+                git branch: 'main', credentialsId: '8e5538c9-18f5-406f-9c48-c388b15b44a9', url: 'https://github.com/send2durai/aws-ec2-instance-bootstrap.git'
             }
         }
         stage ('EXECUTING LINUX COMMANDS') {
