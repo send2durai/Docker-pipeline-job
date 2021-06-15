@@ -12,15 +12,15 @@ pipeline {
                     ls -lah
                     lsblk
                     df -hT
-                    sudo yum list installed >> /home/centos/pack.txt
+                    yum list installed >> /home/centos/pack.txt
                     ls -ltr /etc/ >> /home/centos/etc-under-folders.txt
                     sleep 5
                     rm -rf /home/centos/india.html
                     sleep 5
                     sudo cat /etc/sysconfig/jenkins  >> /home/centos/jenkins-conf.txt
                     git version
-                    sudo systemctl status docker
-                    sudo docker version
+                    systemctl status docker
+                    docker version
                    '''
             }
         }
@@ -47,21 +47,22 @@ pipeline {
                 sh 'echo "First docker images pulling from Docker hub"'
                 sh '''
 		   docker info
-                   #docker pull durai5050/backend:v1
-                   #docker pull durai5050/frontend:v1
+                   docker pull durai5050/backend:v1
+                   docker pull durai5050/frontend:v1
                    docker images
 		   sleep 5
-		   docker images >> /home/centos/doc-imag.txt
+		   pwd # To identify the present working directory
+		   docker images >> /home/ec2-user/doc-imag.txt
 		   pwd
-		   cd /home/centos
+		   cd /home/ec2-user
 		   pwd
-		   cat /home/centos/doc-imag.txt
+		   cat /home/ec2-user/doc-imag.txt
                    docker ps
-		   #docker run -d --name web-srvr -p 80:80 436
-		   #docker run -d --name mysqldb -p 81:80 2f9
-	           docker container ls -q
+		   docker run -d --name web-srvr -p 80:80 436
+		   docker run -d --name mysqldb -p 81:80 2f9
+	           docker container ls -q > /home/ec2-user/con-id.txt
                    docker ps 
-		   sleep 10
+		   sleep 6
 		   echo "_______ docker images and containers are provisioned _______"
 		   sleep 6
 		   docker container ls -q
@@ -73,7 +74,7 @@ pipeline {
                    #docker inspect e65 | grep IPAddress
                    sleep 1
                    pwd
-                   cd /home/centos
+                   cd /home/ec2-user
                    pwd
                    ls -ltr
                    #cat frontend-cont.txt | grep IPAddress
@@ -84,10 +85,10 @@ pipeline {
                    sleep 3
 		   #docker stop 278 e65
 		   #docker rm 278 e65
-		   docker rmi 2f9 436
+		   #docker rmi 2f9 436
 		   sleep 2
-		   docker ps
-		   docker images
+		   #docker ps
+		   #docker images
                    echo "__________ ENDS THE SCRIPT ________"
                    '''
             }
