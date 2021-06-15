@@ -57,7 +57,7 @@ pipeline {
 		   #echo "_______ docker images and containers are provisioned _______"
 		   sleep 5
 		   echo " How to inspect the docker containers using their unique ID ??"
-		   #docker start fcc d57
+		   docker start fcc d57
 		   docker ps -a > /home/ec2-user/cont.txt
 		   awk '{ print$1 }' cont.txt
                    docker inspect fcc > /home/ec2-user/frontend-cont.txt
@@ -78,7 +78,7 @@ pipeline {
 		   sleep 2
                    echo "________ docker images and containers removal _________"
                    sleep 3
-		   #docker stop fcc d57
+		   #docker start fcc d57
 		   #docker rm 278 e65
 		   #docker rmi 2f9 436
 		   sleep 2
