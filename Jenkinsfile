@@ -13,7 +13,7 @@ pipeline {
                     df -h
 		    id
                     sleep 5
-                    cat /etc/sysconfig/jenkins  >> /home/ec2-user/jenkins-conf.txt
+                    cp /etc/sysconfig/jenkins  >> /home/ec2-user/jen-conf.txt
                     git version
                     systemctl status docker
                     docker version
@@ -45,22 +45,21 @@ pipeline {
 		   docker info
                    #docker pull durai5050/backend:v1
                    #docker pull durai5050/frontend:v1
-                   docker images
-		   sleep 5
 		   pwd # To identify the present working directory
 		   docker images >> /home/ec2-user/docimag.txt
 		   pwd
 		   cd /home/ec2-user
 		   pwd
 		   awk '{ print$3 }' docimag.txt
-                   docker ps
 		   #docker run -d --name web-srvr -p 80:80 436
 		   #docker run -d --name mysqldb -p 81:80 2f9
-	           docker ps -a > /home/ec2-user/doc-cont.txt
-		   awk '{ print$3 }' doc-cont.txt
-		   echo "_______ docker images and containers are provisioned _______"
-		   sleep 6
-		   echo " How to inspect the docker containers using their unique ID??"
+	           #docker ps -a > /home/ec2-user/cont.txt
+		   #echo "_______ docker images and containers are provisioned _______"
+		   sleep 5
+		   echo " How to inspect the docker containers using their unique ID ??"
+		   docker start fcc d57
+		   docker ps -a > /home/ec2-user/cont.txt
+		   awk '{ print$3 }' cont.txt
                    docker inspect fcc > /home/ec2-user/frontend-cont.txt
                    docker inspect d57 > /home/ec2-user/backend-cont.txt
                    sleep 3
@@ -71,9 +70,9 @@ pipeline {
                    cd /home/ec2-user
                    pwd
                    ls -ltr
-                   cat frontend-cont.txt | grep IPAddress
-                   cat backend-cont.txt | grep IPAddress
-                   cat jenkins-conf.txt
+                   #cat frontend-cont.txt | grep IPAddress
+                   #cat backend-cont.txt | grep IPAddress
+                   cat jen-conf.txt | grep JENKINS_USER
 		   sleep 2
                    echo "________ docker images and containers removal _________"
                    sleep 3
