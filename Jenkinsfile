@@ -13,7 +13,7 @@ pipeline {
                     df -h
 		    id
                     sleep 5
-                    cp /etc/sysconfig/jenkins  >> /home/ec2-user/jen-conf.txt
+                    cat /etc/sysconfig/jenkins  >> /home/ec2-user/jen-conf.txt
                     git version
                     systemctl status docker
                     docker version
