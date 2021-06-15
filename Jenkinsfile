@@ -9,14 +9,9 @@ pipeline {
         stage ('EXECUTING LINUX COMMANDS') {
             steps {
                 sh '''
-                    ls -lah
                     lsblk
-                    df -hT
+                    df -h
 		    id
-                    yum list installed >> /home/ec2-user/pack.txt
-                    ls -ltr /etc/ >> /home/ec2-user/etc-under-folders.txt
-                    sleep 5
-                    sudo rm -rf /home/ec2-user/india.html
                     sleep 5
                     cat /etc/sysconfig/jenkins  >> /home/ec2-user/jenkins-conf.txt
                     git version
@@ -31,13 +26,13 @@ pipeline {
                 sh 'echo  "Happy learning"'
             }
         }
-        stage ('CORONA IS KILLING ENTIRE WORLD'){
+        stage ('ADVERTISING CORONA IS A DANGEROUS VIRUS'){
             steps {
                 sh 'echo "Corona is a dangerous virus"'
                 sh 'echo "Please try to get vaccinated to your body"'
             }
         }
-        stage ('TIME TO LEARN DEVOPS TOOLS'){
+        stage ('TIME TO LEARN DEVOPS AND ITS TOOLS'){
             steps {
                 sh 'echo "Learn as much as possible to learn"'
                 sh 'echo "The world is moving very FAST"'
@@ -48,26 +43,24 @@ pipeline {
                 sh 'echo "First docker images pulling from Docker hub"'
                 sh '''
 		   docker info
-                   docker pull durai5050/backend:v1
-                   docker pull durai5050/frontend:v1
+                   #docker pull durai5050/backend:v1
+                   #docker pull durai5050/frontend:v1
                    docker images
 		   sleep 5
 		   pwd # To identify the present working directory
-		   docker images >> /home/ec2-user/doc-imag.txt
+		   docker images >> /home/ec2-user/docimag.txt
 		   pwd
 		   cd /home/ec2-user
 		   pwd
-		   cat /home/ec2-user/doc-imag.txt
+		   awk '{ print$3 }' docimag.txt
                    docker ps
 		   #docker run -d --name web-srvr -p 80:80 436
 		   #docker run -d --name mysqldb -p 81:80 2f9
-	           docker container ls -q > /home/ec2-user/con-id.txt
-                   docker ps 
-		   sleep 6
+	           docker ps -a > /home/ec2-user/doc-cont.txt
+		   awk '{ print$3 }' doc-cont.txt
 		   echo "_______ docker images and containers are provisioned _______"
 		   sleep 6
-		   docker container ls -q
-		   echo " How to inspect the docker containers using their unique ID"
+		   echo " How to inspect the docker containers using their unique ID??"
                    docker inspect fcc > /home/ec2-user/frontend-cont.txt
                    docker inspect d57 > /home/ec2-user/backend-cont.txt
                    sleep 3
