@@ -20,9 +20,9 @@ pipeline {
                    '''
             }
         }
-        stage ('LINUX COMMANDS ARE EXECUTED') {
+        stage ('JENKINS IS AN OPEN SOURCE CI/CD TOOLS') {
             steps {
-                sh 'echo "Your JOB IS successfully completed"'
+                sh 'echo "To setup anykind of jobs in automated way"'
                 sh 'echo  "Happy learning"'
             }
         }
