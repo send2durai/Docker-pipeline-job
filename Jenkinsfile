@@ -59,8 +59,8 @@ pipeline {
 		   pwd
 		   cat /home/ec2-user/doc-imag.txt
                    docker ps
-		   docker run -d --name web-srvr -p 80:80 436
-		   docker run -d --name mysqldb -p 81:80 2f9
+		   #docker run -d --name web-srvr -p 80:80 436
+		   #docker run -d --name mysqldb -p 81:80 2f9
 	           docker container ls -q > /home/ec2-user/con-id.txt
                    docker ps 
 		   sleep 6
@@ -68,23 +68,23 @@ pipeline {
 		   sleep 6
 		   docker container ls -q
 		   echo " How to inspect the docker containers using their unique ID"
-                   #docker inspect 278 > /home/ec2-user/frontend-cont.txt
-                   #docker inspect e65 > /home/ec2-user/backend-cont.txt
+                   docker inspect fcc > /home/ec2-user/frontend-cont.txt
+                   docker inspect d57 > /home/ec2-user/backend-cont.txt
                    sleep 3
-                   #docker inspect 278 | grep IPAddress
-                   #docker inspect e65 | grep IPAddress
+                   docker inspect fcc | grep IPAddress
+                   docker inspect d57 | grep IPAddress
                    sleep 1
                    pwd
                    cd /home/ec2-user
                    pwd
                    ls -ltr
-                   #cat frontend-cont.txt | grep IPAddress
-                   #cat backend-cont.txt | grep IPAddress
-                   #cat jenkins-conf.txt
+                   cat frontend-cont.txt | grep IPAddress
+                   cat backend-cont.txt | grep IPAddress
+                   cat jenkins-conf.txt
 		   sleep 2
                    echo "________ docker images and containers removal _________"
                    sleep 3
-		   #docker stop 278 e65
+		   #docker stop fcc d57
 		   #docker rm 278 e65
 		   #docker rmi 2f9 436
 		   sleep 2
