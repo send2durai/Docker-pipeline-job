@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage ('CHECKOUT GIT MASTER REPO') {
+        stage ('CHECKOUT GIT') {
             steps {
                 git branch: 'main', credentialsId: '8e5538c9-18f5-406f-9c48-c388b15b44a9', url: 'https://github.com/send2durai/aws-ec2-instance-bootstrap.git'
             }
@@ -17,7 +17,7 @@ pipeline {
                     sleep 5
                     rm -rf /home/ec2-user/india.html
                     sleep 5
-                    sudo cat /etc/sysconfig/jenkins  >> /home/centos/jenkins-conf.txt
+                    cat /etc/sysconfig/jenkins  >> /home/ec2-user/jenkins-conf.txt
                     git version
                     systemctl status docker
                     docker version
@@ -67,8 +67,8 @@ pipeline {
 		   sleep 6
 		   docker container ls -q
 		   echo " How to inspect the docker containers using their unique ID"
-                   #docker inspect 278 > /home/centos/frontend-cont.txt
-                   #docker inspect e65 > /home/centos/backend-cont.txt
+                   #docker inspect 278 > /home/ec2-user/frontend-cont.txt
+                   #docker inspect e65 > /home/ec2-user/backend-cont.txt
                    sleep 3
                    #docker inspect 278 | grep IPAddress
                    #docker inspect e65 | grep IPAddress
