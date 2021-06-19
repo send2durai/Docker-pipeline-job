@@ -56,8 +56,8 @@ pipeline {
 		   cd /home/ec2-user
 		   pwd
 		   awk '{ print$3 }' docimag.txt
-		   docker run -d --name web-srvr -p 80:80 d29
-		   #just docker run -d --name mysqldb -p 81:80 436
+		   docker run -d --name web1 -p 80:80 d29
+		   docker run -d --name mysqldb -p 81:80 436
 	           #docker ps -a > /home/ec2-user/cont.txt
 		   #echo "_______ docker images and containers are provisioned _______"
 		   sleep 5
@@ -66,7 +66,7 @@ pipeline {
 		   docker ps -a > /home/ec2-user/cont.txt
 		   awk '{ print$1 }' cont.txt
                    docker inspect fcc > /home/ec2-user/frontend-cont.txt
-                   docker inspect d57 > /home/ec2-user/backend-cont.txt
+                   #docker inspect d57 > /home/ec2-user/backend-cont.txt
                    sleep 3
                    #docker inspect fcc | grep IPAddress
                    #docker inspect d57 | grep IPAddress
