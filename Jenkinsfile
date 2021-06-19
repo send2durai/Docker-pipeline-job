@@ -56,8 +56,8 @@ pipeline {
 		   cd /home/ec2-user
 		   pwd
 		   awk '{ print$3 }' docimag.txt
-		   #docker run -d --name web-srvr -p 80:80 436
-		   #docker run -d --name mysqldb -p 81:80 2f9
+		   docker run -d --name web-srvr -p 80:80 d29
+		   #just docker run -d --name mysqldb -p 81:80 436
 	           #docker ps -a > /home/ec2-user/cont.txt
 		   #echo "_______ docker images and containers are provisioned _______"
 		   sleep 5
