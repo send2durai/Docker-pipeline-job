@@ -17,6 +17,11 @@ pipeline {
                     git version
                     systemctl status docker
                     docker version
+                    pwd
+                    cd /home/ec2-user/mynaa/Docker-pipeline-job
+                    docker build -t apache-new .
+                    docker images
+                    pwd
                    '''
             }
         }
