@@ -20,8 +20,10 @@ pipeline {
                     pwd
                     cd /home/ec2-user/mynaa/Docker-pipeline-job
                     #docker build -t apache-new .
-                    #docker images
+                    docker images
+		    docker login -u durai5050 --password-stdin
 		    docker push durai5050/2021-images:apache-new
+		    docker logout
                     pwd
                    '''
             }
