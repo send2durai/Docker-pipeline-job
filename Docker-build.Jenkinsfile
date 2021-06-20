@@ -19,7 +19,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push durai5050/dp-alpine:latest'
+        sh 'docker push docker push durai5050/2021-images:dp-alpine:latest'
       }
     }
   }
