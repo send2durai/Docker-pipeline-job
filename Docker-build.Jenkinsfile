@@ -11,7 +11,7 @@ pipeline {
       steps {
         sh '''
            pwd
-           /home/ec2-user/mynaa/Docker-pipeline-job
+           cd /home/ec2-user/mynaa/Docker-pipeline-job
            docker build -t durai5050/2021-images:apache .
            docker images
            '''
