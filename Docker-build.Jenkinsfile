@@ -11,8 +11,10 @@ pipeline {
       steps {
         sh '''
            pwd
-           cd /home/ec2-user/mynaa/iac-demo/
-           docker build -t durai5050/2021-images: apache .
+           /home/ec2-user/mynaa/Docker-pipeline-job
+           docker build -t durai5050/2021-images:apache .
+           docker images
+           '''
       }
     }
     stage('Login') {
