@@ -13,7 +13,7 @@ pipeline {
            pwd
            echo "Starts building the Image from Dockerfile"
            cd /home/ec2-user/mynaa/Docker-pipeline-job
-           docker build -t durai5050/2021-images:web-nginx .
+           docker build -t durai5050/2021-images:nginx-v1 .
            docker images
            '''
       }
@@ -27,7 +27,7 @@ pipeline {
     stage('Docker Push') {
       steps {
         sh 'echo "Pushing the built images to Dockerhub"'
-        sh 'docker push durai5050/2021-images:web-nginx'
+        sh 'docker push durai5050/2021-images:nginx-v1'
       }
     }
   }

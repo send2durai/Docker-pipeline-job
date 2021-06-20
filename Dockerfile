@@ -8,4 +8,5 @@ COPY index.html /usr/share/nginx/html
 EXPOSE 80
 RUN useradd appuser
 USER appuser
-CMD nginx -DFOREGROUND
+ENTRYPOINT ["/usr/sbin/nginx", "-g", "daemon off;"]
+
