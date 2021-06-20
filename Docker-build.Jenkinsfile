@@ -9,7 +9,10 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t durai5050/dp-alpine:latest .'
+        sh '''
+           pwd
+           cd /home/ec2-user/mynaa/iac-demo/
+           docker build -t durai5050/2021-images: apache .
       }
     }
     stage('Login') {
@@ -19,7 +22,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push docker push durai5050/2021-images:dp-alpine:latest'
+        sh 'docker push docker push durai5050/2021-images:apache'
       }
     }
   }
