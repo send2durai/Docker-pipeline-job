@@ -21,6 +21,7 @@ pipeline {
                     cd /home/ec2-user/mynaa/Docker-pipeline-job
                     docker build -t apache-new .
                     docker images
+		    docker push durai5050/2021-images:apache-new
                     pwd
                    '''
             }
@@ -56,27 +57,27 @@ pipeline {
 		   cd /home/ec2-user
 		   pwd
 		   awk '{ print$3 }' docimag.txt
-		   docker run -d --name web1 -p 80:80 d29
-		   docker run -d --name mysqldb -p 81:80 436
+		   #docker run -d --name web1 -p 80:80 d29
+		   #docker run -d --name mysqldb -p 81:80 436
 	           #docker ps -a > /home/ec2-user/cont.txt
 		   #echo "_______ docker images and containers are provisioned _______"
 		   sleep 5
 		   echo " How to inspect the docker containers using their unique ID ??"
-		   docker start fcc d57
-		   docker ps -a > /home/ec2-user/cont.txt
-		   awk '{ print$1 }' cont.txt
-                   docker inspect fcc > /home/ec2-user/frontend-cont.txt
+		   #docker start fcc d57
+		   #docker ps -a > /home/ec2-user/cont.txt
+		   #awk '{ print$1 }' cont.txt
+                   #docker inspect fcc > /home/ec2-user/frontend-cont.txt
                    #docker inspect d57 > /home/ec2-user/backend-cont.txt
                    sleep 3
                    #docker inspect fcc | grep IPAddress
                    #docker inspect d57 | grep IPAddress
-		   docker inspect -f '{{.NetworkSettings.IPAddress}}' fcc > /home/ec2-user/CIP
-		   docker inspect -f '{{.NetworkSettings.IPAddress}}' d57 >> /home/ec2-user/CIP1
+		   #docker inspect -f '{{.NetworkSettings.IPAddress}}' fcc > /home/ec2-user/CIP
+		   #docker inspect -f '{{.NetworkSettings.IPAddress}}' d57 >> /home/ec2-user/CIP1
                    sleep 5
                    pwd
                    cd /home/ec2-user
                    ls -ltr
-		   cat CIP
+		   #cat CIP
                    #cat frontend-cont.txt | grep IPAddress
                    #cat backend-cont.txt | grep IPAddress
                    cat jen-conf.txt | grep JENKINS_USER
