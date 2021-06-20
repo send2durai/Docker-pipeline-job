@@ -21,7 +21,10 @@ pipeline {
                     cd /home/ec2-user/mynaa/Docker-pipeline-job
                     #docker build -t apache-new .
                     docker images
-		    docker login -u durai5050 --password-stdin
+		    sleep 3
+		    DOCKERHUB_CREDENTIALS = credentials('durai5050-DockerHub')
+		    'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+		    docker login
 		    docker push durai5050/2021-images:apache-new
 		    docker logout
                     pwd
