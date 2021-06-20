@@ -19,8 +19,8 @@ pipeline {
                     docker version
                     pwd
                     cd /home/ec2-user/mynaa/Docker-pipeline-job
-                    docker build -t apache-new .
-                    docker images
+                    #docker build -t apache-new .
+                    #docker images
 		    docker push durai5050/2021-images:apache-new
                     pwd
                    '''
