@@ -6,6 +6,6 @@ RUN yum install -y nginx
 ENV Name=demodurai
 COPY index.html /usr/share/nginx/html
 EXPOSE 80
-RUN useradd nginx
-USER nginx
+RUN useradd appuser
+USER appuser
 CMD nginx -DFOREGROUND
