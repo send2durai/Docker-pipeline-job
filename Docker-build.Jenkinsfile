@@ -7,7 +7,7 @@ pipeline {
     DOCKERHUB_CREDENTIALS = credentials('durai5050-DockerHub')
   }
   stages {
-    stage('Build') {
+    stage('Docker Build') {
       steps {
         sh '''
            pwd
@@ -17,14 +17,15 @@ pipeline {
            '''
       }
     }
-    stage('Login') {
+    stage('Docker Login') {
       steps {
+        sh 'echo "Trying to login DockerHub account"'
         sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
       }
     }
     stage('Push') {
       steps {
-        sh 'docker push docker push durai5050/2021-images:apache'
+        sh 'docker push durai5050/2021-images:apache'
       }
     }
   }
