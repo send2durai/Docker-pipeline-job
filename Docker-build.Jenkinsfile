@@ -11,7 +11,7 @@ pipeline {
       steps {
         sh '''
            pwd
-           'echo "Starts building the Image from Dockerfile"'
+           echo "Starts building the Image from Dockerfile"
            cd /home/ec2-user/mynaa/Docker-pipeline-job
            docker build -t durai5050/2021-images:web-apache .
            docker images
