@@ -5,4 +5,4 @@ Docker is a set of platform as a service products that use OS-level virtualizati
 
 This repository is used to create docker containers and test the application deployed in containers.
 
-
+Post Docker image build, pushing it to Docker Hub.
